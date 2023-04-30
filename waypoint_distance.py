@@ -87,14 +87,13 @@ finally:
     l = len(waypoints_array)
     for i in range(l-1):
         s = []
-        
+        s.append(waypoints_array[i][0])
+        s.append(waypoints_array[i][1])
         s.append(waypoints_array[i+1][1])
         d = ((waypoints_array[i+1][3] - waypoints_array[i][3])**2 + (waypoints_array[i+1][2] - waypoints_array[i][2])**2)**0.5
         s.append(d)
-        states.append(waypoints_array[i][2])
-        states.append(waypoints_array[i][3])
-        s.append(waypoints_array[i][0])
-        s.append(waypoints_array[i][1])
+        s.append(waypoints_array[i][2])
+        s.append(waypoints_array[i][3])
         states.append(s)
 
     with open('waypoint.csv', 'w', newline='') as file:
