@@ -92,6 +92,8 @@ finally:
         s.append(waypoints_array[i+1][1])
         d = ((waypoints_array[i+1][3] - waypoints_array[i][3])**2 + (waypoints_array[i+1][2] - waypoints_array[i][2])**2)**0.5
         s.append(d)
+        states.append(waypoints_array[i][2])
+        states.append(waypoints_array[i][3])
         states.append(s)
 
     with open('waypoint.csv', 'w', newline='') as file:
